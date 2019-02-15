@@ -3,8 +3,15 @@ const router = express.Router();
 
 const Task = require("../models/task");
 
+//Obtener Tareas
 router.get("/", async (req, res) => {
   const tasks = await Task.find();
+  res.json(tasks);
+});
+
+router.get('/:id', async (req, res) => {
+  const task = await Task.findById(req.params.id)
+  res.json(task)
 });
 
 //Almacenar tareas
