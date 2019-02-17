@@ -5,10 +5,8 @@ const { VueLoaderPlugin } = require("vue-loader");
 module.exports = {
   entry: "./src/app/main.js",
   output: {
-    // path: path.resolve(__dirname, './dist'),
-    // path: path.resolve(__dirname, '/src/public/dist/'),
+    
     path: __dirname + "/src/public/js",
-    // publicPath: '/dist/',
     filename: "build.js"
   },
   module: {
@@ -52,7 +50,7 @@ module.exports = {
         test: /\.(png|jpg|gif|svg)$/,
         loader: "file-loader",
         options: {
-          name: "[name].[ext]?[hash]"
+          name: '[path][name].[ext]',
         }
       }
     ]

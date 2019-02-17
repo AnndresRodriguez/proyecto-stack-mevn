@@ -1,5 +1,6 @@
 <template>
   <div>
+
     <div class="container">
       <div class="row pt-5">
         <div class="col-md-5">
@@ -69,6 +70,7 @@ import $ from "jquery";
 import "bootstrap/dist/js/bootstrap.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+
 class Task {
   constructor(titleTask, descriptionTask) {
     this.title = titleTask;
@@ -83,12 +85,13 @@ export default {
       task: new Task(),
       tasks: [],
       edit: false,
-      taskToEdit: ""
+      taskToEdit: "",
     };
   },
 
   created() {
     this.getTasks();
+    
   },
   methods: {
     sendTask() {

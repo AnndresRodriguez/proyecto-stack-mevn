@@ -8,11 +8,11 @@ const mongoose = require("mongoose");
 app.set("port", process.env.PORT || 3000);
 
 
-//mongoose.connect('mongodb://localhost/mevn-database' , {useNewUrlParser: true})
+mongoose.connect('mongodb://localhost/mevn-database' , {useNewUrlParser: true})
 //mongoose.connect('mongodb://AdminDBS:root@localhost/mevn-database?authSource=admin' , {useNewUrlParser: true})
 
 //Database
-mongoose.connect('mongodb://AndresRodriguez:root@localhost/mevn-database' , {useNewUrlParser: true})
+//mongoose.connect('mongodb://AndresRodriguez:root@localhost/mevn-database' , {useNewUrlParser: true})
 .then(db => console.log('Connection established'))
 .catch(err => console.log(err))
 
@@ -26,6 +26,7 @@ app.use("/api/tasks", routes);
 
 //Static files
 app.use(express.static(__dirname + "/public"));
+console.log('ruta del archivo', __dirname);
 
 //Listening server
 app.listen(app.get("port"), () => {
